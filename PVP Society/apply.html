@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PVP Society | Helper Application Form</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="animation.css">
+</head>
+<body>
+    <div class="ambient-bg">
+        <div class="orb orb-1"></div>
+        <div class="orb orb-2"></div>
+    </div>
+    <div class="grid-overlay"></div>
+
+    <!-- Top Navigation Bar -->
+    <nav class="top-nav">
+        <div class="nav-brand"><i class="fa-solid fa-shield-halved"></i> PVP Society</div>
+        <a href="https://discord.gg/UAgjR3WCsD" target="_blank" class="btn-discord-top">
+    <i class="fa-brands fa-discord"></i> Join Discord
+</a>
+    </nav>
+
+    <div class="container">
+        <header>
+            <div class="badge animate-fade-in"><i class="fa-solid fa-user-shield"></i> Staff Portal</div>
+            <h1 class="animate-slide-up">Helper Application</h1>
+            <p class="animate-slide-up">Answer all questions thoughtfully and honestly.</p>
+        </header>
+
+        <div class="app-card animate-scale-up">
+            <div class="nav-back">
+                <a href="index.html"><i class="fa-solid fa-arrow-left"></i> Back to Requirements</a>
+            </div>
+
+            <!-- Cooldown Alert Banner (Hidden by Default) -->
+            <div id="cooldownBanner" class="cooldown-banner" style="display: none;">
+                <i class="fa-solid fa-clock-rotate-left"></i>
+                <div>
+                    <strong>Application Cooldown Active</strong>
+                    <p id="cooldownText">You submitted an application recently. You can reapply on...</p>
+                </div>
+            </div>
+
+            <form id="pvpForm" action="process.php" method="POST">
+                <!-- Question 1 -->
+                <div class="form-group">
+                    <label for="ign"><i class="fa-solid fa-gamepad"></i> 1. What is your Minecraft username (IGN)?</label>
+                    <input type="text" id="ign" name="ign" placeholder="e.g. ApexPredator" required>
+                </div>
+
+                <!-- Question 2 -->
+                <div class="form-group">
+                    <label for="discord"><i class="fa-brands fa-discord"></i> 2. What is your Discord username?</label>
+                    <input type="text" id="discord" name="discord" placeholder="e.g. cyberknight#0001" required>
+                </div>
+
+                <!-- Question 3 -->
+                <div class="form-group">
+                    <label for="age"><i class="fa-solid fa-cake-candles"></i> 3. How old are you?</label>
+                    <input type="number" id="age" name="age" placeholder="e.g. 17" min="13" max="99" required>
+                </div>
+
+                <!-- Question 4 -->
+                <div class="form-group">
+                    <label for="timezone"><i class="fa-solid fa-globe"></i> 4. What is your timezone?</label>
+                    <input type="text" id="timezone" name="timezone" placeholder="e.g. EST / UTC-5" required>
+                </div>
+
+                <!-- Question 5 -->
+                <div class="form-group">
+                    <label for="playtime"><i class="fa-solid fa-clock"></i> 5. How long have you been playing on PVP Society?</label>
+                    <input type="text" id="playtime" name="playtime" placeholder="e.g. 5 months / 2 weeks" required>
+                </div>
+
+                <!-- Question 6 -->
+                <div class="form-group">
+                    <label for="play_hours"><i class="fa-solid fa-hourglass-half"></i> 6. How many hours can you dedicate to the server each week?</label>
+                    <input type="text" id="play_hours" name="play_hours" placeholder="e.g. 15-20 hours" required>
+                </div>
+
+                <!-- Question 7 -->
+                <div class="form-group">
+                    <label for="experience"><i class="fa-solid fa-award"></i> 7. Do you have any previous staff experience? If so, list the servers and positions you have held.</label>
+                    <textarea id="experience" name="experience" rows="3" placeholder="List past servers and roles, or put 'None'..." required></textarea>
+                </div>
+
+                <!-- Question 8 -->
+                <div class="form-group">
+                    <label for="punishments"><i class="fa-solid fa-triangle-exclamation"></i> 8. Have you ever been punished on PVP Society or another Minecraft server? If so, explain the circumstances.</label>
+                    <textarea id="punishments" name="punishments" rows="3" placeholder="Explain any past mutes, bans, or warnings..." required></textarea>
+                </div>
+
+                <!-- Question 9 -->
+                <div class="form-group">
+                    <label for="skills"><i class="fa-solid fa-star"></i> 9. What skills or qualities do you have that would make you a good Helper?</label>
+                    <textarea id="skills" name="skills" rows="3" placeholder="Mention your patience, communication skills, technical knowledge..." required></textarea>
+                </div>
+
+                <!-- Question 10 -->
+                <div class="form-group">
+                    <label for="why_helper"><i class="fa-solid fa-bullseye"></i> 10. Why do you want to become a Helper on PVP Society?</label>
+                    <textarea id="why_helper" name="why_helper" rows="3" placeholder="Tell us what motivates you..." required></textarea>
+                </div>
+
+                <!-- Question 11 -->
+                <div class="form-group">
+                    <label for="why_you"><i class="fa-solid fa-user-check"></i> 11. Why should PVP Society choose you over other applicants?</label>
+                    <textarea id="why_you" name="why_you" rows="3" placeholder="Highlight what sets you apart..." required></textarea>
+                </div>
+
+                <!-- Question 12 -->
+                <div class="form-group">
+                    <label for="additional"><i class="fa-solid fa-circle-info"></i> 12. Is there anything else you would like the staff team to know about you?</label>
+                    <textarea id="additional" name="additional" rows="3" placeholder="Any extra information or comments..." required></textarea>
+                </div>
+
+                <!-- Disclaimer Notice -->
+                <div class="form-disclaimer">
+                    <p><i class="fa-solid fa-file-contract"></i> <strong>Disclaimer:</strong> By submitting this application, you confirm that the information provided is accurate and that you understand that submitting an application does not guarantee acceptance. The PVP Society staff team reserves the right to accept or decline applications at its discretion.</p>
+                </div>
+
+                <button type="submit" class="btn-submit" id="submitBtn">
+                    <span>Submit Application</span>
+                    <i class="fa-solid fa-paper-plane"></i>
+                </button>
+            </form>
+            <div id="formResponse" class="form-response"></div>
+        </div>
+    </div>
+
+    <script>
+        const COOLDOWN_DAYS = 7;
+        const COOLDOWN_MS = COOLDOWN_DAYS * 24 * 60 * 60 * 1000;
+
+        // Check 7-day cooldown on page load
+        function checkCooldown() {
+            const lastSubmitted = localStorage.getItem('pvp_app_submitted');
+            if (lastSubmitted) {
+                const timePassed = Date.now() - parseInt(lastSubmitted, 10);
+                if (timePassed < COOLDOWN_MS) {
+                    const remainingMs = COOLDOWN_MS - timePassed;
+                    const nextAvailableDate = new Date(Date.now() + remainingMs).toLocaleDateString(undefined, {
+                        weekday: 'long', year: 'numeric', month: 'long', day: 'numeric'
+                    });
+
+                    // Lock form inputs
+                    document.querySelectorAll('#pvpForm input, #pvpForm textarea, #pvpForm button').forEach(el => {
+                        el.disabled = true;
+                    });
+
+                    const banner = document.getElementById('cooldownBanner');
+                    const text = document.getElementById('cooldownText');
+                    text.innerText = `You submitted an application recently. You can reapply on ${nextAvailableDate}.`;
+                    banner.style.display = 'flex';
+                }
+            }
+        }
+
+        checkCooldown();
+
+        // Handle AJAX Form Submission
+        document.getElementById('pvpForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const btn = document.getElementById('submitBtn');
+            const respDiv = document.getElementById('formResponse');
+            
+            btn.disabled = true;
+            btn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Submitting...';
+            
+            const formData = new FormData(this);
+            
+            fetch('process.php', {
+                method: 'POST',
+                body: formData
+            })
+            .then(res => res.json())
+            .then(data => {
+                respDiv.style.display = 'block';
+                if(data.success) {
+                    respDiv.className = 'form-response success animate-fade-in';
+                    respDiv.innerHTML = '<i class="fa-solid fa-circle-check"></i> ' + data.message;
+                    
+                    // Store submission timestamp in local storage
+                    localStorage.setItem('pvp_app_submitted', Date.now().toString());
+                    
+                    document.getElementById('pvpForm').reset();
+                    
+                    // Refresh cooldown state after brief delay
+                    setTimeout(checkCooldown, 2000);
+                } else {
+                    respDiv.className = 'form-response error animate-fade-in';
+                    respDiv.innerHTML = '<i class="fa-solid fa-triangle-exclamation"></i> ' + (data.error || 'An error occurred.');
+                    btn.disabled = false;
+                    btn.innerHTML = '<span>Submit Application</span> <i class="fa-solid fa-paper-plane"></i>';
+                }
+            })
+            .catch(err => {
+                respDiv.style.display = 'block';
+                respDiv.className = 'form-response error animate-fade-in';
+                respDiv.innerHTML = '<i class="fa-solid fa-triangle-exclamation"></i> Network transmission error. Please try again.';
+                btn.disabled = false;
+                btn.innerHTML = '<span>Submit Application</span> <i class="fa-solid fa-paper-plane"></i>';
+            });
+        });
+    </script>
+</body>
+</html>
